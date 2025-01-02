@@ -1,0 +1,133 @@
+/* General styles */
+body {
+    font-family: 'Roboto', sans-serif; /* Modern font */
+    background-color: #f3f4f6; /* Soft gray background */
+    color: #444;
+    margin: 0;
+    padding: 0;
+}
+
+/* Box with colored background and caption */
+.app-box {
+    background-color: #6a1b9a; /* Deep purple background for the box */
+    color: white;
+    padding: 40px;
+    text-align: center;
+    border-radius: 12px;
+    max-width: 850px;
+    margin: 50px auto;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    background-image: url('https://example.com/path/to/alternative-image.jpg'); /* Background image */
+    background-size: cover;
+    background-position: center;
+    position: relative; /* Set relative position for overlay */
+}
+
+/* Adding a semi-transparent overlay */
+.app-box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(50, 50, 50, 0.5); /* Dark gray overlay */
+    border-radius: 12px;
+    z-index: 0; /* Push the overlay behind content */
+}
+
+/* Text content in the app-box */
+.app-box * {
+    position: relative; /* Ensure text is above overlay */
+    z-index: 1;
+}
+
+/* Styling the heading */
+.app-box h1 {
+    font-size: 40px;
+    margin: 0;
+    padding: 0;
+    letter-spacing: 1.5px;
+}
+
+/* Styling subheadings */
+.app-box h2 {
+    font-size: 26px;
+    margin-top: 25px;
+    margin-bottom: 15px;
+    color: #ffd740; /* Gold color for contrast */
+}
+
+/* Adding colored text for features */
+.app-box p {
+    font-size: 18px;
+    margin: 15px 0;
+    color: #f5f5f5;
+    line-height: 1.6;
+}
+
+/* Button styling */
+button {
+    padding: 14px 30px;
+    font-size: 16px;
+    color: white;
+    background-color: #03a9f4; /* Bright blue button */
+    border: 2px solid #03a9f4;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: #0288d1; /* Darker blue on hover */
+    transform: scale(1.1); /* More noticeable scaling effect */
+}
+
+button:focus {
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(3, 169, 244, 0.5); /* Bright blue shadow on focus */
+}
+
+/* Footer container styling */
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    background-color: #1e1e1e; /* Very dark gray background */
+    border-top: 2px solid #6a1b9a; /* Accent color border */
+    position: relative;
+}
+
+footer div {
+    width: 100%;
+    max-width: 850px;
+    text-align: center;
+    color: #f9f9f9; /* Light gray text */
+}
+
+footer p {
+    font-size: 15px;
+    margin: 10px 0;
+}
+
+/* Sample content styling */
+footer .sample-content {
+    font-size: 16px;
+    color: #cccccc;
+    font-style: italic;
+}
+
+/* Responsive design for small screens */
+@media (max-width: 600px) {
+    .app-box {
+        padding: 25px;
+    }
+    
+    button {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+}
